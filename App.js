@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Home from "./src/screens/Home";
 import HomeHeader from "./src/components/HomeHeader";
+import RootProduct from "./src/screens/RootProduct";
 
 
 const Drawer = createDrawerNavigator();
@@ -25,6 +26,7 @@ export default function App() {
             )
           }}
         />
+        <Stack.Screen name="RootProduct" component={RootProduct} options={{headerShown: false}}/>
       </Drawer.Navigator>
     </NavigationContainer>
   );

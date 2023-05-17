@@ -5,7 +5,7 @@ import CategoriesList from '../components/CategoriesList'
 import ProductsCard from '../components/ProductsCard'
 
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
    <View style={{marginHorizontal: 18}}>
     <TextInput
@@ -19,7 +19,7 @@ const Home = () => {
       </View>
       <CategoriesList/>
     </View>
-    <ProductsCard/>
+    <ProductsCard cardProductNavigateToProduct={() => navigation.navigate('RootProduct')}/>
    </View>
   )
 }

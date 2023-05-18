@@ -1,11 +1,30 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { TextInput } from 'react-native-gesture-handler'
 import CategoriesList from '../components/CategoriesList'
 import ProductsCard from '../components/ProductsCard'
 
 
 const Home = ({navigation}) => {
+
+  const [productsData, setProductsData] = useState([]);
+
+  const fetchProductsData = () => {
+    fetch('http://10.0.2.2:3000/products')
+      .then(response => response.json())
+      .then(data => setProductsData(JSON.stringify(data)))
+      .catch((error) => {
+        // Handle any errors that occur
+        console.error(error);
+    });
+  };
+
+  useEffect(() => {
+    fetchProductsData();
+  }, []);
+
+
+   
   return (
    <View style={{marginHorizontal: 18}}>
     <TextInput
@@ -25,6 +44,9 @@ const Home = ({navigation}) => {
 }
 
 export default Home
+
+
+
 
 const styles = StyleSheet.create({
   titleSeeMore : {

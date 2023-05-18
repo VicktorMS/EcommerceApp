@@ -26,7 +26,7 @@ export default function App() {
             )
           }}
         />
-        <Stack.Screen name="RootProduct" component={RootProduct} options={{headerShown: false}}/>
+        <Stack.Screen name="RootProduct" component={RootProduct}  options={{headerShown: false}}/>
       </Drawer.Navigator>
     </NavigationContainer>
   );

@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import ProductItemInCard from "./ProductItemInCard";
 
-const ProductsCard = ({cardProductNavigateToProduct}) => {
+const ProductsList = ({onPressProductCard}) => {
   return (
     <>
       <View style={{marginTop: 20}}>
@@ -17,13 +17,13 @@ const ProductsCard = ({cardProductNavigateToProduct}) => {
         </Text>
       </View>
       <View style={styles.productsCard}>
-        <ProductItemInCard onPress={cardProductNavigateToProduct}/>
+        <ProductItemInCard onPress={onPressProductCard}/>
       </View>
     </>
   );
 };
 
-export default ProductsCard;
+export default ProductsList;
 
 const styles = StyleSheet.create({
   productsCard: {

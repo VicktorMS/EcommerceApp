@@ -1,8 +1,9 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { TextInput } from 'react-native-gesture-handler'
+import ProductsList from '../components/ProductsList'
 import CategoriesList from '../components/CategoriesList'
-import ProductsCard from '../components/ProductsCard'
+
 
 
 const Home = ({navigation}) => {
@@ -19,12 +20,17 @@ const Home = ({navigation}) => {
     });
   };
 
-  useEffect(() => {
-    fetchProductsData();
-  }, []);
+  // useEffect(() => {
+  //   fetchProductsData();
+  // }, []);
 
-
+  const mockProductData = [
+    {
+      
+    }
+  ]
    
+
   return (
    <View style={{marginHorizontal: 18}}>
     <TextInput
@@ -38,7 +44,7 @@ const Home = ({navigation}) => {
       </View>
       <CategoriesList/>
     </View>
-    <ProductsCard cardProductNavigateToProduct={() => navigation.navigate('RootProduct')}/>
+    <ProductsList onPressProductCard={() => navigation.navigate('RootProduct')}/>
    </View>
   )
 }

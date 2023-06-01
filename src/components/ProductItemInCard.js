@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { TouchableHighlight } from "react-native-gesture-handler";
 
-const ProductItemInCard = ({onPress}) => {
+const ProductItemInCard = ({onPress }) => {
   return (
     <TouchableHighlight onPress={onPress}>
       <View style={styles.container}>
